@@ -1,2 +1,205 @@
-# Joropo
-Día cultural - Festival del Joropo
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>🌅 Festival del Joropo y la Madre Monte 🌿</title>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+  body {
+    font-family: "Poppins", sans-serif;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6a/Llanos_de_Casanare_sunset.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #3a2d1b;
+  }
+
+  header {
+    background: rgba(178, 34, 34, 0.85);
+    color: #fff;
+    padding: 40px 20px;
+    border-bottom: 5px solid #ffd166;
+  }
+
+  header h1 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+  }
+
+  section {
+    padding: 25px 15px;
+    max-width: 900px;
+    margin: 20px auto;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+  }
+
+  h2 {
+    color: #8b0000;
+    margin-bottom: 10px;
+  }
+
+  .boton {
+    background: #ff9f00;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .boton:hover {
+    background: #ffb733;
+    transform: scale(1.05);
+  }
+
+  .galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .galeria img {
+    width: 90%;
+    max-width: 280px;
+    border-radius: 12px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+  }
+
+  .mito img {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 10px;
+  }
+
+  footer {
+    background: rgba(59, 44, 25, 0.9);
+    color: white;
+    padding: 20px;
+    font-size: 0.9em;
+  }
+</style>
+</head>
+
+<body>
+  <header>
+    <h1>🌾 Festival del Joropo 🌾</h1>
+    <p>La magia del llano cobra vida en nuestro espacio</p>
+  </header>
+
+  <section>
+    <h2> 🎶 Vive la música 🤠</h2>
+    <p>
+      El joropo es más que un baile: es una forma de sentir la tierra, el viento y el amor.
+      Celebramos las raíces del llano con arte, música y tradición.
+    </p>
+
+    <!-- Botón para activar la música -->
+    <a class="boton" href="https://www.youtube.com/watch?v=oD-hjv6E2bY" target="_blank">🎵 Escuchar “Orinoco” - Cimarrón</a>
+    <p><small>Abre el enlace para escuchar la canción del llano</small></p>
+  </section>
+
+<section class="galeria">
+  <h2>📸 Galería del Llano</h2>
+
+  <!-- Imagen 1: Baile del Joropo -->
+  <img src="23942606837_b19bf8c63e_c.jpg" alt="Baile del Joropo"
+       title="Baile del Joropo"
+       onclick="mostrarPopup('El baile del joropo es el alma del llano. Representa la conexión entre el hombre, el caballo y la tierra, con pasos firmes que evocan el galope y el amor por la sabana.')">
+
+  <!-- Imagen 2: Amanecer del llano -->
+  <img src="6503962729_c692e6f7d4_c.jpg"
+       alt="Amancer del llano"
+       title="Amanecer del llano"
+       onclick="mostrarPopup('La vaquería llanera es una tradición que combina el trabajo con el arte. Los cantos de vaquería acompañan las labores diarias, siendo un símbolo de identidad y resistencia cultural.')">
+
+  <!-- Imagen 3: Arpa Llanera -->
+  <img src="11749616824_7869b537cd_c.jpg"
+       alt="Arpa Llanera"
+       title="Arpa Llanera"
+       onclick="mostrarPopup('El joropo tradicional se baila en pareja, con zapateo y vueltas rápidas. Cada movimiento expresa orgullo, respeto y la historia del pueblo llanero.')">
+</section>
+
+<!-- POP-UP -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="cerrar" onclick="cerrarPopup()">&times;</span>
+    <p id="popup-texto"></p>
+  </div>
+</div>
+
+<style>
+/* Estilos del popup */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.popup-content {
+  background-color: #fff8e1;
+  margin: 15% auto;
+  padding: 20px;
+  border: 3px solid #b22222;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.cerrar {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+  color: #b22222;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: scale(0.9);}
+  to {opacity: 1; transform: scale(1);}
+}
+</style>
+
+<script>
+function mostrarPopup(texto) {
+  document.getElementById("popup-texto").innerText = texto;
+  document.getElementById("popup").style.display = "block";
+}
+function cerrarPopup() {
+  document.getElementById("popup").style.display = "none";
+}
+</script>
+
+
+  <section class="mito">
+    <h2>🌿 La Madre Monte</h2>
+    <p>
+      En los montes del llano habita la <strong>Madre Monte</strong>, espíritu guardiana de los ríos y la vida silvestre.
+      Representa la fuerza natural que protege los ecosistemas y castiga a quien destruye lo vivo.
+    </p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Madremonte_folklore_colombiano.jpg" alt="Ilustración de la Madre Monte">
+  </section>
+
+  <footer>
+    © 2025 Ministerio de Igualdad y Equidad · Día Cultural <br>
+    Hecho con 💛 por el equipo del Festival del Joropo
+  </footer>
+</body>
+</html>
